@@ -24,7 +24,3 @@ def hello():
     # render_template function while passing the file name as a string (Flask will automatically look for the template folder with your html files inside)
     # the data is the placeholder and the api_data is the variable. equivalent to ({data: data_variable} passed as second argument of response.render())
     return render_template('home.html', data=api_data)
-
-@app.route('/hey')
-def hey():
-    return 'hey'
