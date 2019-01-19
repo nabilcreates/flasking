@@ -11,7 +11,7 @@ app = Flask(__name__)
 # Variables?
 api_url = 'https://arrivelah.herokuapp.com/?id=27301'
 
-# Set root route
+# Set root route (equivalent to app.get())
 @app.route('/')
 
 # When visiting root route, it will run this function below
@@ -21,3 +21,7 @@ def hello():
 
     # json.dumps() convert json to string
     return json.dumps(api_data)
+
+@app.route('/hey')
+def hey():
+    return 'hey'
