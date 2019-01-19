@@ -5,7 +5,9 @@ import requests
 import json
 
 # Import flask
-from flask import Flask
+from flask import Flask, render_template
+
+# Initialize the app (equivalent to let app = express())
 app = Flask(__name__)
 
 # Variables?
@@ -19,8 +21,8 @@ def hello():
 
     api_data = requests.get(api_url).json()
 
-    # json.dumps() convert json to string
-    return json.dumps(api_data)
+    # render_template function while passing the file name as a string (Flask will automatically look for the template folder with your html files inside)
+    return render_template('home.html')
 
 @app.route('/hey')
 def hey():
